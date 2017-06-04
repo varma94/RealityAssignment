@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="row" style="height:500px; width: 500px; " >
+    <div class="center-block" style="margin: auto 0" >
+      <canvas class="chart chart-line"  chart-dataset-override="datasetOverride" baseChart width="10" height="10"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"
+      ></canvas>
+    </div>
+  </div>
+ <div class="row" style="margin-bottom: 10px">
+   <h3>Input readings</h3>
+   <h4>To edit values change the value and click Save</h4>
+   <table class="table">
+     <tr>
+       <th *ngFor="let label of lineChartLabels">Reading-{{label}}</th>
+     </tr>
+     <tr *ngFor="let d of lineChartData; let i=index">
+
+       <td *ngFor="let label of lineChartLabels; let j=index"   ><input type="text" size="1" [(ngModel)]="d.data[j]"></td>
+     </tr>
+    <button class="btn btn-primary" (click)="updateData()">Save</button>
+   </table>
+
+  </div>
+</div>

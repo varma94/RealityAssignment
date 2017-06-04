@@ -1,0 +1,20 @@
+
+  <div class="row">
+    <div class="col-md-4">
+      <h1>User Input</h1>
+      <form>
+
+          <label for="xValue">1st value</label><br>
+          <input type="number" class="form-control" id="xValue" name="xValue" [(ngModel)]="xValue"><br>
+
+          <label for="yValue">2nd value</label><br>
+          <input type="number" class="form-control" id="yValue" name="yValue" [(ngModel)]="yValue"><br><br>
+
+        <button type="submit" class="btn btn-primary"(click)="graph.addData()">Submit</button>
+      </form>
+
+    </div>
+    <div class="col-md-8">
+      <app-graph [xValue]="xValue" [yValue]="yValue" #graph></app-graph>
+    </div>
+  </div>
