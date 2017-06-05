@@ -3,7 +3,9 @@ import {Component, Input, OnChanges, SimpleChange, SimpleChanges} from '@angular
 
 @Component({
   selector: 'app-graph',
-  templateUrl: './graph.component.html'
+  templateUrl: './graph.component.html',
+  styleUrls: ['./graph.component.css']
+
 
 })
 export class GraphComponent implements OnChanges{
